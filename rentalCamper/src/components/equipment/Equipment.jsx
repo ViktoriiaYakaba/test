@@ -12,10 +12,10 @@ const Equipment = () => {
           <p className={css.text}>Filters</p>
           <ul className={css.list}>
             <li className={css.listItem}><BsWind size={32}/><p className={css.textList}>AC</p></li>
-            <li className={css.listItem}><TbAutomaticGearbox size={32} /><p>Automatic</p></li>
-            <li className={css.listItem}><TbToolsKitchen2 size={32}/>Kitchen</li>
-            <li className={css.listItem}><PiTelevisionSimple size={32} />TV</li>
-            <li className={css.listItem}><LuShowerHead size={32} />Shower/WC</li>
+            <li className={css.listItem}><TbAutomaticGearbox size={32} /><p className={css.textList}>Automatic</p></li>
+            <li className={css.listItem}><TbToolsKitchen2 size={32}/><p className={css.textList}>Kitchen</p></li>
+            <li className={css.listItem}><PiTelevisionSimple size={32} /><p className={css.textList}>TV</p></li>
+            <li className={css.listItem}><LuShowerHead size={32} /><p className={css.textList}>Shower/WC</p></li>
           </ul>
     </div>
   )
