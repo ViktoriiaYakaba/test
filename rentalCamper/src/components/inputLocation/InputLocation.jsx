@@ -6,7 +6,7 @@ const InputLocation = () => {
     <div className={css.container}>
       <label htmlFor="locationInput">Location</label>
       <div className={css.inputWrapper}>
-        <CiLocationOn className={css.icon} />
+        <CiLocationOn className={css.icon} size={ 20} />
         <input
           id="locationInput"
           type="text"

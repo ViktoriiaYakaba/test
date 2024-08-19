@@ -1,0 +1,30 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.card{
+    border: 1px solid rgba(16, 24, 40, 0.2);
+        border-radius: 20px;
+        padding: 24px;
+        width: 888px;
+        height: 358px;
+        background: #fff;
+        display: flex;
+}
+
+.image{
+    border-radius: 10px;
+    width: 290px;
+    height: 310px;
+}
+
+.description{
+    display: -webkit-box;
+        -webkit-line-clamp: 1;
+        /* Numero di righe da visualizzare */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}

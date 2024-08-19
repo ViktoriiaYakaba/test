@@ -14,12 +14,13 @@ label{
 .inputWrapper{
     border-radius: 10px;
     padding: 18px 285px 18px 18px;
-    width: 260px;
+    width: 200px;
     height: 26px;
     background: var(--inputs);
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
-
-
 
 .input{
     font-family: "Inter", sans-serif;
@@ -30,5 +31,6 @@ label{
     border: none;
     background: var(--inputs);
     outline: none;
+    width: 200px;
 }
 
