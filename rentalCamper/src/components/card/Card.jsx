@@ -1,16 +1,24 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { FaRegHeart, FaBed, FaShower, FaTv, FaFireExtinguisher } from 'react-icons/fa'; // Importa le icone necessarie
-import { CiStar } from 'react-icons/ci';
+import { FaRegHeart, FaShower, FaTv} from 'react-icons/fa'; 
+import { CiStar, CiLocationOn } from 'react-icons/ci';
 import css from './Card.module.css';
-import { selectFilteredCatalog } from '../../redux/catalog/selectors'; // Assicurati che il percorso sia corretto
+import { selectFilteredCatalog } from '../../redux/catalog/selectors'; 
+import { PiWindLight } from "react-icons/pi";
+import { LiaBedSolid } from "react-icons/lia";
+import { IoDiscOutline } from "react-icons/io5";
+import { TbToolsKitchen3 } from "react-icons/tb";
+import { MdOutlineBathroom } from "react-icons/md";
+import LoadMore from '../buttonLoadMore/LoadMore';
 
 const detailIcons = {
-  airConditioner: <FaFireExtinguisher />,
-  beds: <FaBed />,
-  shower: <FaShower />,
-  TV: <FaTv />,
-  // Aggiungi altre mappature per icone qui
+  airConditioner: <PiWindLight size={20} />,
+  beds: <LiaBedSolid size={20}/>,
+  shower: <FaShower size={20} />,
+  TV: <FaTv size={20}/>,
+  CD: <IoDiscOutline size={20}/>,
+  kitchen: <TbToolsKitchen3 size={20}/>, 
+  bathroom: <MdOutlineBathroom size={20}/>,
 };
 
 const Card = () => {
@@ -36,33 +44,45 @@ const Card = () => {
             )}
           </div>
           <div className={css.details}>
-            <h3 className={css.name}>{catalog.name}</h3>
-            <p className={css.price}>${catalog.price}</p>
-              <FaRegHeart className={css.heart} />
-            <p className={css.rating}>Rating:  <CiStar className={css.star} />{catalog.rating}</p>
-            <p className={css.location}>{catalog.location}</p>
+            <div className={css.containerName}>
+              <h3 className={css.name}>{catalog.name}</h3>
+              <ul className={css.list}>
+                <li className={css.listItem}><p className={css.price}>${catalog.price}</p></li>
+                <li className={css.listItem}> 
+                  <button className={css.btnHeart}><FaRegHeart className={css.heart} size={24} /></button>
+                </li>
+              </ul>
+            </div>
+            <div className={css.containerRating}>
+              <p className={css.rating}><CiStar className={css.star} fill='#ffc531' size={24}/>{catalog.rating}</p>
+              <p className={css.location}><CiLocationOn className={css.icon} size={14} />{catalog.location}</p>
+            </div>
             <p className={css.description}>{catalog.description}</p>
             <ul className={css.detailsList}>
               {catalog.details && Object.entries(catalog.details).slice(0, 6).map(([key, value]) => (
-                <li key={`${catalog._id}-${key}`} className={css.detailItem}>
-                  <span className={css.detailIcon}>
-                    {detailIcons[key] || <span>🔘</span>} {/* Icona predefinita se non trovata */}
-                  </span>
-                  <span className={css.detailText}>
-                    {key.charAt(0).toUpperCase() + key.slice(1)}: {value}
-                  </span>
-                </li>
+                value > 0 && ( // Condizione per saltare gli elementi con valore pari a zero
+                  <li key={`${catalog._id}-${key}`} className={css.detailItem}>
+                    <span className={css.detailIcon}>
+                      {detailIcons[key] || <span>🔘</span>} 
+                    </span>
+                    <span className={css.detailText}>
+                      {value} {key.charAt(0).toUpperCase() + key.slice(1)} 
+                    </span>
+                  </li>
+                )
               ))}
             </ul>
             <button className={css.showMore}>Show more</button>
           </div>
         </div>
       ))}
+      <LoadMore/>
     </div>
   );
 };
 
 export default Card;
+
 
 
 

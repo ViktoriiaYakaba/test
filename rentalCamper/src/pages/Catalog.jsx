@@ -6,14 +6,19 @@ import ButtonSearch from '../components/buttonSeasrch/ButtonSearch';
 import Card from '../components/card/Card';
 import css from './Styles.module.css';
 
+
 const Catalog = () => {
   return (
     <div className={css.container}>
-      <InputLocation />
-      <Equipment />
-      <Type />
-      <ButtonSearch />
-      <Card />
+     <div className={css.containerDetails}>
+        <InputLocation />
+        <Equipment />
+        <Type />
+        <ButtonSearch />
+     </div>
+      <div className={css.containerCard}>
+        <Card />
+      </div>
     </div>
   )
 }
