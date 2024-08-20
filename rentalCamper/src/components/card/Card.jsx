@@ -26,8 +26,8 @@ const Card = () => {
   const [visibleCount, setVisibleCount] = useState(4); 
 
   
-  if (!Array.isArray(catalogs)) {
-    return <p>Data is not available</p>;
+ if (!Array.isArray(catalogs) || catalogs.length === 0) {
+    return <p>No data available based on the filters applied.</p>; // Message if no data
   }
 
   const loadMore = () => {
@@ -84,7 +84,9 @@ const Card = () => {
                 )
               ))}
             </ul>
+            <button className={css.showMore}>Show more</button>
           </div>
+         
         </div>
       ))}
 

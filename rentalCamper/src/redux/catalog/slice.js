@@ -39,7 +39,6 @@ const catalogsSlice = createSlice({
       })
       .addCase(addCatalog.rejected, handleRejected)
 
-      // Delete
       .addCase(deleteCatalog.pending, handlePending)
       .addCase(deleteCatalog.fulfilled, (state, action) => {
         state.isLoading = false;

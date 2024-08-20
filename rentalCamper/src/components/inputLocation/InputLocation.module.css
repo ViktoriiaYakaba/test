@@ -34,3 +34,7 @@ label{
     width: 200px;
 }
 
+.btn{
+    border: none;
+    background-color: transparent;
+}

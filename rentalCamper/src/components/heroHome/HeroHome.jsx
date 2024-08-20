@@ -1,8 +1,15 @@
 import React from 'react'
-import HeroImage from '../../../images/homeImage.jpg';
+import HeroImage from '../../assets/images/homeImage.jpg';
+import { useNavigate } from 'react-router-dom';
 import css from './HeroHome.module.css';
 
 const HeroHome = () => {
+  const navigate = useNavigate();
+
+   const handleSearchClick = () => {
+    navigate('/catalog');
+  };
+
   return (
     <div className={css.container}>
         <ul className={css.list}>
@@ -11,7 +18,7 @@ const HeroHome = () => {
             </li>
               <li className={css.listItem}>
                           <p className={css.text}>The road is yours, freedom is yours. <span>Camper, van, and campervan rentals.</span></p>
-                         <button type='button' className={css.btn}>Search now</button> 
+                         <button type='button' className={css.btn} onClick={handleSearchClick}>Search now</button> 
               </li>
               
         </ul>

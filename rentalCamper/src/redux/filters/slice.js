@@ -3,32 +3,39 @@ import { createSlice } from '@reduxjs/toolkit';
 const filtersSlice = createSlice({
   name: 'filters',
   initialState: {
-    name: '',
-    location: '', 
-    minPrice: 0, 
-    maxPrice: 1000000,
+    location: '',        
+    equipment: [],       
+    camperType: null,    
   },
   reducers: {
-    changeNameFilter(state, action) {
-      state.name = action.payload;
+    setLocationFilter(state, action) {
+      state.location = action.payload;  
     },
-    changeLocationFilter(state, action) {
-      state.location = action.payload;
+    toggleEquipmentFilter(state, action) {
+      if (state.equipment.includes(action.payload)) {
+        state.equipment = state.equipment.filter(
+          (item) => item !== action.payload
+        ); 
+      } else {
+        state.equipment.push(action.payload); 
+      }
     },
-    changeMinPriceFilter(state, action) {
-      state.minPrice = action.payload;
+    setCamperTypeFilter(state, action) {
+      state.camperType = action.payload; 
     },
-    changeMaxPriceFilter(state, action) {
-      state.maxPrice = action.payload;
+    clearFilters(state) {
+      state.location = '';
+      state.equipment = [];
+      state.camperType = null;
     },
   },
 });
 
 export const {
-  changeNameFilter,
-  changeLocationFilter,
-  changeMinPriceFilter,
-  changeMaxPriceFilter
+  setLocationFilter,
+  toggleEquipmentFilter,
+  setCamperTypeFilter,
+  clearFilters,
 } = filtersSlice.actions;
 
 export const filtersReducer = filtersSlice.reducer;

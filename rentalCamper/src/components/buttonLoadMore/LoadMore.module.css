@@ -13,6 +13,6 @@ color: #101828;
 background-color: transparent;
 }
 
-.btn:hover{
+button.btn:hover{
     border-color:#e44848;
 }
