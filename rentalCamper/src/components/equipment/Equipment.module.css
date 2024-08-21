@@ -44,21 +44,11 @@ gap: 24px;
     justify-content: center;
 }
 .listItem:hover{
-    border-color: red;
+    border-color: #E44848;
 }
 
-.listItem {
-    border: 1px solid rgba(16, 24, 40, 0.2);
-    border-radius: 10px;
-    padding: 17px 18px;
-    width: 103px;
-    height: 85px;
-    mix-blend-mode: multiply;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    justify-content: center;
+.active{
+    border-color: #E44848;
 }
 
 .checkbox {

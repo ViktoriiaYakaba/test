@@ -3,7 +3,7 @@ import css from './ButtonSearch.module.css';
 const ButtonSearch = () => {
   return (
     <div className={css.container}>
-      <button type='button' className={css.btn}>Search</button>
+      <button type='submit' className={css.btn}>Search</button>
     </div>
   )
 }

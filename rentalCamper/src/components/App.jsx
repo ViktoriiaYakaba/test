@@ -4,10 +4,12 @@ import { useDispatch } from "react-redux";
 import { fetchCatalog } from "../redux/catalog/operations";
 import { useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-import css from './App.module.css'
+import css from './App.module.css';
+import { Layout } from "./Layout";
 
 const HomePage = lazy(() => import('../pages/Home'));
 const CatalogPage = lazy(() => import('../pages/Catalog'));
+const FavoritePage = lazy(() => import('../pages/Favorite'));
 
 export default function App() {
 const dispatch = useDispatch();
@@ -18,12 +20,15 @@ const dispatch = useDispatch();
 
   return (
     <>
-      <Suspense fallback={<div className={css.container}><ClipLoader  size={100}/></div>}>
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/catalog' element={<CatalogPage/>} />
-        </Routes>
-        </Suspense>
+      <Layout>
+        <Suspense fallback={<div className={css.container}><ClipLoader  size={100}/></div>}>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+            <Route path='/catalog' element={<CatalogPage />} />
+            <Route path='/favorite' element={<FavoritePage/>} />
+          </Routes>
+          </Suspense>
+      </Layout>
     </>
     
   )

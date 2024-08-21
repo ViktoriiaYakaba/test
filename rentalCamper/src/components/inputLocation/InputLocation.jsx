@@ -1,15 +1,8 @@
 import css from './InputLocation.module.css';
 import { IoLocationOutline } from "react-icons/io5";
-import { useDispatch, useSelector } from 'react-redux';
-import { setLocationFilter } from '../../redux/filters/slice';
 
-const InputLocation = () => {
-  const dispatch = useDispatch();
-  const location = useSelector((state) => state.filters.location); 
 
-  const handleInputChange = (e) => {
-    dispatch(setLocationFilter(e.target.value)); 
-  };
+const InputLocation = ({value, onChange}) => {
 
   return (
     <div className={css.container}>
@@ -21,8 +14,8 @@ const InputLocation = () => {
           type="text"
           placeholder="City"
           className={css.input}
-          value={location}
-          onChange={handleInputChange} 
+          value={value}
+          onChange={(e) => onChange(e.target.value)} 
         />
       </div>
     </div>

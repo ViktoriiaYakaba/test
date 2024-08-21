@@ -1,0 +1,33 @@
+.header{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #E44848;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 300px;
+}
+
+.nav{
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    transition: color 0.3s ease;
+}
+
+.nav:hover{
+    color: #E44848;
+}
+
+.active{
+    color: #E44848;
+}

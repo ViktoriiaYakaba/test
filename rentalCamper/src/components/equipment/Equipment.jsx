@@ -1,91 +1,64 @@
-import React, { useState } from "react"; 
+import React from "react";
 import Icon from "../icon/icon";
 import css from './Equipment.module.css';
 import { PiWindLight } from "react-icons/pi";
 import clsx from "clsx";
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleEquipmentFilter } from '../../redux/filters/slice';
 
 const Equipment = () => {
-  const [selectedEquipment, setSelectedEquipment] = useState({
-    AC: false,
-    Automatic: false,
-    Kitchen: false,
-    TV: false,
-    Shower: false,
-  });
+  const dispatch = useDispatch();
+  const equipment = useSelector((state) => state.filters.equipment);
 
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setSelectedEquipment((prevState) => ({
-      ...prevState,
-      [name]: checked,
-    }));
+  const toggleEquipment = (key) => {
+    dispatch(toggleEquipmentFilter(key)); 
   };
+
+  const buildLinkClass = (key) => {
+    return clsx(css.listItem, equipment.includes(key) && css.active);
+  };
+
+  const equipmentList = ['AC', 'Automatic', 'Kitchen', 'TV', 'Shower']; 
 
   return (
     <div className={css.container}>
       <h3 className={css.title}>Vehicle equipment</h3>
       <p className={css.text}>Filters</p>
       <ul className={css.list}>
-        <li className={css.listItem}>
-          <input
-            type="checkbox"
-            name="AC"
-            checked={selectedEquipment.AC}
-            onChange={handleCheckboxChange}
-            className={css.checkbox} 
-          />
-          <PiWindLight size={32} />
-          <p className={css.textList}>AC</p>
-        </li>
-        <li className={css.listItem}>
-          <input
-            type="checkbox"
-            name="Automatic"
-            checked={selectedEquipment.Automatic}
-            onChange={handleCheckboxChange}
-            className={css.checkbox} 
-          />
-          <Icon width="32" height="32" icon="change" />
-          <p className={css.textList}>Automatic</p>
-        </li>
-        <li className={css.listItem}>
-          <input
-            type="checkbox"
-            name="Kitchen"
-            checked={selectedEquipment.Kitchen}
-            onChange={handleCheckboxChange}
-            className={css.checkbox} 
-          />
-          <Icon width="32" height="32" icon="kitchen" />
-          <p className={css.textList}>Kitchen</p>
-        </li>
-        <li className={css.listItem}>
-          <input
-            type="checkbox"
-            name="TV"
-            checked={selectedEquipment.TV}
-            onChange={handleCheckboxChange}
-            className={css.checkbox} 
-          />
-          <Icon width="32" height="32" icon="TV" />
-          <p className={css.textList}>TV</p>
-        </li>
-        <li className={css.listItem}>
-          <input
-            type="checkbox"
-            name="Shower"
-            checked={selectedEquipment.Shower}
-            onChange={handleCheckboxChange}
-            className={css.checkbox} 
-          />
-          <Icon width="32" height="32" icon="batch" />
-          <p className={css.textList}>Shower/WC</p>
-        </li>
+        {equipmentList.map((key) => (
+          <li
+            key={key}
+            className={buildLinkClass(key)}
+            onClick={() => toggleEquipment(key)}
+          >
+            <input
+              type="checkbox"
+              name={key}
+              checked={equipment.includes(key)} 
+              readOnly
+              className={css.checkbox}
+            />
+            {key === "AC" && <PiWindLight size={32} />}
+            {key === "Automatic" && <Icon width="32" height="32" icon="change" />}
+            {key === "Kitchen" && <Icon width="32" height="32" icon="kitchen" />}
+            {key === "TV" && <Icon width="32" height="32" icon="TV" />}
+            {key === "Shower" && <Icon width="32" height="32" icon="batch" />}
+            <p className={css.textList}>{key}</p>
+          </li>
+        ))}
       </ul>
     </div>
   );
-}
+};
 
 export default Equipment;
+
+
+
+
+
+
+
+
 
 

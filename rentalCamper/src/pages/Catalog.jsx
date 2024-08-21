@@ -1,8 +1,5 @@
-import React from 'react'
-import InputLocation from '../components/inputLocation/InputLocation';
-import Equipment from '../components/equipment/Equipment';
-import Type from '../components/type/Type';
-import ButtonSearch from '../components/buttonSeasrch/ButtonSearch';
+import React from 'react';
+import SearchForm from '../components/searchForm/SearchForm';
 import Card from '../components/card/Card';
 import css from './Styles.module.css';
 
@@ -11,10 +8,7 @@ const Catalog = () => {
   return (
     <div className={css.container}>
      <div className={css.containerDetails}>
-        <InputLocation />
-        <Equipment />
-        <Type />
-        <ButtonSearch />
+        <SearchForm/>
      </div>
       <div className={css.containerCard}>
         <Card />
