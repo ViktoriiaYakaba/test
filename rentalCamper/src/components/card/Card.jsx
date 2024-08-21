@@ -11,12 +11,22 @@ const Card = () => {
   const catalogs = useSelector(selectFilteredCatalog);
   const [visibleCount, setVisibleCount] = useState(4);
 
+  // Stato per tenere traccia di quali cuori sono attivi per ogni elemento
+  const [activeHearts, setActiveHearts] = useState({});
+
   if (!Array.isArray(catalogs) || catalogs.length === 0) {
     return <p>No data available based on the filters applied.</p>;
   }
 
   const loadMore = () => {
     setVisibleCount(prevCount => prevCount + 4);
+  };
+
+  const handleToggle = (id) => {
+    setActiveHearts(prevState => ({
+      ...prevState,
+      [id]: !prevState[id] // Toggle lo stato del cuore per il singolo elemento
+    }));
   };
 
   return (
@@ -42,8 +52,15 @@ const Card = () => {
                   <p className={css.price}>${catalog.price.toFixed(2)}</p>
                 </li>
                 <li className={css.listItem}>
-                  <button className={css.btnHeart}>
-                    <Icon width="24" height="24" icon="heart-1" className={css.heart} />
+                  <button 
+                    className={css.btnHeart} 
+                    onClick={() => handleToggle(catalog._id)} // Passiamo l'id dell'elemento
+                  >
+                    {activeHearts[catalog._id] ? (
+                      <Icon width="24" height="24" icon="heart-2" className={css.heart} />
+                    ) : (
+                      <Icon width="24" height="24" icon="heart-1" className={css.heart} />
+                    )}
                   </button>
                 </li>
               </ul>
@@ -78,6 +95,7 @@ const Card = () => {
 };
 
 export default Card;
+
 
 
 

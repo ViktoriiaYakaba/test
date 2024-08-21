@@ -22,7 +22,9 @@
     align-items: center;
 }
 
-.img{
+.img {
+    object-fit: cover;
+    display: block;
     border-radius: 30px;
 }
 
