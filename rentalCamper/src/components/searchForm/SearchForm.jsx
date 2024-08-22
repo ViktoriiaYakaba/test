@@ -1,3 +1,4 @@
+import React from 'react';
 import InputLocation from '../inputLocation/InputLocation';
 import Equipment from '../equipment/Equipment';
 import Type from '../type/Type';

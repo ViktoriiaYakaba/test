@@ -6,13 +6,14 @@ import { selectFilteredCatalog } from '../../redux/catalog/selectors';
 import LoadMore from '../buttonLoadMore/LoadMore';
 import Icon from '../icon/icon';
 import { PiWindLight } from "react-icons/pi";
+import ModalCamper from '../modalCamper/ModalCamper';
 
 const Card = () => {
   const catalogs = useSelector(selectFilteredCatalog);
   const [visibleCount, setVisibleCount] = useState(4);
-
-  // Stato per tenere traccia di quali cuori sono attivi per ogni elemento
   const [activeHearts, setActiveHearts] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCatalog, setSelectedCatalog] = useState(null);
 
   if (!Array.isArray(catalogs) || catalogs.length === 0) {
     return <p>No data available based on the filters applied.</p>;
@@ -25,8 +26,19 @@ const Card = () => {
   const handleToggle = (id) => {
     setActiveHearts(prevState => ({
       ...prevState,
-      [id]: !prevState[id] // Toggle lo stato del cuore per il singolo elemento
+      [id]: !prevState[id] 
     }));
+  };
+
+  const openModal = (catalog) => {
+     console.log("Opening modal for: ", catalog);
+    setSelectedCatalog(catalog); 
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); 
+    setSelectedCatalog(null); 
   };
 
   return (
@@ -54,7 +66,7 @@ const Card = () => {
                 <li className={css.listItem}>
                   <button 
                     className={css.btnHeart} 
-                    onClick={() => handleToggle(catalog._id)} // Passiamo l'id dell'elemento
+                    onClick={() => handleToggle(catalog._id)} 
                   >
                     {activeHearts[catalog._id] ? (
                       <Icon width="24" height="24" icon="heart-2" className={css.heart} />
@@ -82,7 +94,9 @@ const Card = () => {
               <li className={css.detailsItem}><Icon width="20" height="20" icon="beds" /><span className={css.detailText}>{catalog.details.beds} beds</span></li>
               <li className={css.detailsItem}><PiWindLight size={20} /><span className={css.detailText}>AC</span></li>
             </ul>
-            <button className={css.showMore}>Show more</button>
+            <button className={css.showMore} onClick={() => openModal(catalog)}>
+              Show more
+            </button>
           </div>
         </div>
       ))}
@@ -90,11 +104,16 @@ const Card = () => {
       {visibleCount < catalogs.length && (
         <LoadMore onClick={loadMore} />
       )}
+
+      {isModalOpen && (
+        <ModalCamper catalog={selectedCatalog} onClose={closeModal} />
+      )}
     </div>
   );
 };
 
 export default Card;
+
 
 
 

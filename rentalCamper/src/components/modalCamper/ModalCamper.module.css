@@ -1,0 +1,84 @@
+.containerModal{
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.container{
+    border-radius: 20px;
+        padding: 40px;
+        width: 982px;
+        height: 720px;
+        background: #fff;
+}
+
+.containerName{
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.name{
+    font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 1.25;
+        color: #101828;
+}
+
+.closeButton{
+    background-color: transparent;
+    border: none;
+}
+
+.containerRating{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.rating{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #101828;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #101828;
+}
+
+.price{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #101828;
+}
+
+.galleryContainer{
+display: flex;
+gap: 16px;
+}
+
+.modalImage{
+border-radius: 10px;
+    width: 290px;
+    height: 310px;
+    object-fit: cover;
+}
+

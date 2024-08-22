@@ -1,3 +1,4 @@
+import React from 'react';
 import css from './ButtonSearch.module.css';
 
 const ButtonSearch = () => {

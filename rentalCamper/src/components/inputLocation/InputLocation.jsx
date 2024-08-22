@@ -1,3 +1,4 @@
+import React from 'react';
 import css from './InputLocation.module.css';
 import { IoLocationOutline } from "react-icons/io5";
 

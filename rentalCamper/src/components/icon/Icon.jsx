@@ -1,3 +1,4 @@
+import React from 'react';
 import sprite from '../../assets/images/sprite.svg';
 
 const Icon = ({ width, height, icon }) => {
