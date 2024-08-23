@@ -59,7 +59,7 @@ const ModalCamper = ({ catalog, onClose }) => {
         </div>
         <div className={css.content}>
           {activeTab === 'features' && <Features catalog={catalog} />}
-          {activeTab === 'reviews' && <Reviews />}
+          {activeTab === 'reviews' && <Reviews catalog={catalog} />}
         </div>
       </div>
     </div>
