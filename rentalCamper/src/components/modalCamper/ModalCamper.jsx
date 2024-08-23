@@ -1,10 +1,18 @@
 import React from 'react';
+import { useState } from 'react';
 import css from './ModalCamper.module.css';
-import Icon from '../icon/icon';
+import Icon from '../icon/Icon';
 import { CiLocationOn } from 'react-icons/ci';
 import { MdClose } from "react-icons/md";
+import Features from './Features';
+import Reviews from './Reviews';
 
 const ModalCamper = ({ catalog, onClose }) => {
+  const [activeTab, setActiveTab] = useState('features');
+
+   const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
   if (!catalog) return null;
 
   return (
@@ -13,7 +21,7 @@ const ModalCamper = ({ catalog, onClose }) => {
         <div className={css.containerName}>
           <h2 className={css.name}>{catalog.name}</h2>
           <button onClick={onClose} className={css.closeButton}>
-          <MdClose size={32} />
+          <MdClose size={32} className={css.icon} />
         </button>
         </div>
         <div className={css.containerRating}>
@@ -38,10 +46,21 @@ const ModalCamper = ({ catalog, onClose }) => {
             ))}
           </div>
         )}
-        
-        <p>{catalog.description}</p>
-        
-        
+        <p className={css.description}>{catalog.description}</p>
+        <div className={css.tabs}>
+          <nav className={css.nav}>
+            <a href="#" className={`${css.tabLink} ${activeTab === 'features' ? css.active : ''}`} onClick={() => handleTabChange('features')}>
+              Features
+            </a>
+            <a href="#" className={`${css.tabLink} ${activeTab === 'reviews' ? css.active : ''}`} onClick={() => handleTabChange('reviews')}>
+              Reviews
+            </a>
+          </nav>
+        </div>
+        <div className={css.content}>
+          {activeTab === 'features' && <Features catalog={catalog} />}
+          {activeTab === 'reviews' && <Reviews />}
+        </div>
       </div>
     </div>
   );

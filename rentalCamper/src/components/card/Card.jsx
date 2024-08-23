@@ -4,7 +4,7 @@ import { CiLocationOn } from 'react-icons/ci';
 import css from './Card.module.css';
 import { selectFilteredCatalog } from '../../redux/catalog/selectors'; 
 import LoadMore from '../buttonLoadMore/LoadMore';
-import Icon from '../icon/icon';
+import Icon from '../icon/Icon';
 import { PiWindLight } from "react-icons/pi";
 import ModalCamper from '../modalCamper/ModalCamper';
 

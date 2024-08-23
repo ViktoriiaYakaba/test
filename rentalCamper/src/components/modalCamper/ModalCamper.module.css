@@ -1,5 +1,5 @@
-.containerModal{
-position: fixed;
+.containerModal {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -9,27 +9,30 @@ position: fixed;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
-.container{
-    border-radius: 20px;
-        padding: 40px;
-        width: 982px;
-        height: 720px;
-        background: #fff;
+    overflow-y: auto;
 }
 
+.container {
+    border-radius: 20px;
+    padding: 40px;
+    width: 982px;
+    height: 720px;
+    background: #fff;
+    overflow-y: auto;
+}
 .containerName{
-display: flex;
-align-items: center;
-justify-content: space-around;
+   display: flex;
+   align-items: center;
+    justify-content: space-between;
 }
 
 .name{
     font-family: "Inter", sans-serif;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 1.25;
-        color: #101828;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #101828;
+    margin-bottom: 8px;
 }
 
 .closeButton{
@@ -37,10 +40,15 @@ justify-content: space-around;
     border: none;
 }
 
+.icon:hover{
+    fill: var( --button);
+}
+
 .containerRating{
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-bottom: 16px;
 }
 
 .rating{
@@ -68,17 +76,137 @@ justify-content: space-around;
     font-size: 24px;
     line-height: 1.25;
     color: #101828;
+    display: flex;
 }
 
 .galleryContainer{
-display: flex;
-gap: 16px;
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .modalImage{
-border-radius: 10px;
+    border-radius: 10px;
     width: 290px;
     height: 310px;
     object-fit: cover;
 }
+
+.description{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #475467;
+    display: flex;
+    text-align: justify;
+}
+
+.tabs{
+margin-top: 44px;
+}
+
+.tabLink{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    text-decoration: none;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+
+.tabLink.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 5px;
+    background-color: var(--button);
+    border-radius: 10px;
+}
+
+.nav{
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+}
+
+.containerFeatures{
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    margin-top: 44px;
+}
+
+.containerDetails{
+    display: flex;
+}
+
+.detailsList{
+display: flex;
+flex-wrap: wrap;
+width: 430px;
+height: 200px;
+gap: 8px;
+}
+
+.detailsItem{
+    border-radius: 100px;
+    padding: 12px 18px;
+    background: #f2f4f7;
+    mix-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.detailText{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    text-align: center;
+    color: #101828;
+}
+
+.containerVehicle{
+   display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: start;
+}
+
+.vehicleTitle{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+    margin-bottom: 24px;
+}
+
+
+
+.vehicleList{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 430px;
+    height: 214px;
+    border-top: 1px solid rgba(16, 24, 40, 0.2);
+    padding-top: 24px;
+}
+
+.vehicleItem{
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
