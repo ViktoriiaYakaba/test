@@ -6,6 +6,7 @@ import { CiLocationOn } from 'react-icons/ci';
 import { MdClose } from "react-icons/md";
 import Features from './Features';
 import Reviews from './Reviews';
+import BookForm from './BookFrom';
 
 const ModalCamper = ({ catalog, onClose }) => {
   const [activeTab, setActiveTab] = useState('features');
@@ -60,6 +61,7 @@ const ModalCamper = ({ catalog, onClose }) => {
         <div className={css.content}>
           {activeTab === 'features' && <Features catalog={catalog} />}
           {activeTab === 'reviews' && <Reviews catalog={catalog} />}
+          <BookForm/>
         </div>
       </div>
     </div>
