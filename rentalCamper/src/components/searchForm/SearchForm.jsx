@@ -16,14 +16,11 @@ const SearchForm = () => {
     const type = useSelector(selectCamperTypeFilter);
 
     const handleLocationChange = (value) => {
-    dispatch(setLocationFilter(value)); // Make sure this updates the location state
+    dispatch(setLocationFilter(value)); 
   };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('location:', location);
-        console.log('equipment:', equipment);
-        console.log('type:', type); 
         dispatch(clearFilters());
     };
    

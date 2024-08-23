@@ -4,6 +4,7 @@ import Card from '../components/card/Card';
 import css from './Styles.module.css';
 
 
+
 const Catalog = () => {
   return (
     <div className={css.container}>

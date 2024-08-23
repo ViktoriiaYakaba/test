@@ -27,13 +27,14 @@ const ModalCamper = ({ catalog, onClose }) => {
         </div>
         <div className={css.containerRating}>
               <p className={css.rating}>
-                <Icon width="16" height="16" icon="star" /> {catalog.rating}
+            <Icon width="16" height="16" icon="star" /> {catalog.rating}
+            ({catalog.reviews?.length || 0} reviews)
               </p>
               <p className={css.location}>
                 <CiLocationOn className={css.icon} size={18} /> {catalog.location}
               </p>
         </div>
-         <p className={css.price}> ${catalog.price.toFixed(2)}</p>
+         <p className={css.price}> ${catalog.price}</p>
         
         {catalog.gallery && catalog.gallery.length > 0 && (
           <div className={css.galleryContainer}>

@@ -8,6 +8,7 @@ import Icon from '../icon/Icon';
 import { PiWindLight } from "react-icons/pi";
 import ModalCamper from '../modalCamper/ModalCamper';
 
+
 const Card = () => {
   const catalogs = useSelector(selectFilteredCatalog);
   const [visibleCount, setVisibleCount] = useState(4);
@@ -61,7 +62,7 @@ const Card = () => {
               <h3 className={css.name}>{catalog.name}</h3>
               <ul className={css.list}>
                 <li className={css.listItem}>
-                  <p className={css.price}>${catalog.price.toFixed(2)}</p>
+                  <p className={css.price}>${catalog.price}</p>
                 </li>
                 <li className={css.listItem}>
                   <button 
@@ -80,6 +81,7 @@ const Card = () => {
             <div className={css.containerRating}>
               <p className={css.rating}>
                 <Icon width="16" height="16" icon="star" /> {catalog.rating}
+                ({catalog.reviews?.length || 0} reviews)
               </p>
               <p className={css.location}>
                 <CiLocationOn className={css.icon} size={18} /> {catalog.location}

@@ -13,11 +13,11 @@ const Features = ({catalog}) => {
               <li className={css.detailsItem}><PiWindLight size={20} /><span className={css.detailText}> AC</span></li>
               <li className={css.detailsItem}><Icon width="20" height="20" icon="petrol" /><span className={css.detailText}>Petrol</span></li>
               <li className={css.detailsItem}><Icon width="20" height="20" icon="kitchen" /><span className={css.detailText}>Kitchen</span></li>
-              <li className={css.detailsItem}><Icon width="20" height="20" icon="beds" /><span className={css.detailText}>{ catalog.beds} beds</span></li>
-              <li className={css.detailsItem}><Icon width="20" height="20" icon="airConditioner" /><span className={css.detailText}>{catalog.airConditioner } air conditioner</span></li>
+              <li className={css.detailsItem}><Icon width="20" height="20" icon="beds" /><span className={css.detailText}>{ catalog.details.beds} beds</span></li>
+              <li className={css.detailsItem}><Icon width="20" height="20" icon="airConditioner" /><span className={css.detailText}>{catalog.details.airConditioner } air conditioner</span></li>
               <li className={css.detailsItem}><Icon width="20" height="20" icon="cd" /><span className={css.detailText}>CD</span></li>
               <li className={css.detailsItem}><Icon width="20" height="20" icon="radio" /><span className={css.detailText}>Radio</span></li>
-          <li className={css.detailsItem}><Icon width="20" height="20" icon="hob" /><span className={css.detailText}>{catalog.hob } hob</span></li>
+          <li className={css.detailsItem}><Icon width="20" height="20" icon="hob" /><span className={css.detailText}>{catalog.details.hob } hob</span></li>
         </ul>
       </div>
       <div className={css.containerVehicle}>
