@@ -4,8 +4,14 @@ const filtersSlice = createSlice({
   name: 'filters',
   initialState: {
     location: '',        
-    equipment: [],       
-    camperType: null,    
+    equipment: {
+      airConditioner: 0,
+      automatic: "",
+      kitchen: 0,
+      TV: 0,
+      shower: 0,
+    },       
+    camperType: '',    
   },
   reducers: {
     setLocationFilter(state, action) {
@@ -25,8 +31,14 @@ const filtersSlice = createSlice({
     },
     clearFilters(state) {
       state.location = '';
-      state.equipment = [];
-      state.camperType = null;
+      state.equipment = {
+      airConditioner: 0,
+      automatic: "",
+      kitchen: 0,
+      TV: 0,
+      shower: 0,
+    };
+      state.camperType = '';
     },
   },
 });

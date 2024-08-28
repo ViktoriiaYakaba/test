@@ -8,8 +8,11 @@ import clsx from 'clsx';
 const Type = () => {
   const dispatch = useDispatch();
   const camperType = useSelector((state) => state.filters.camperType);
+console.log("Camper Type from Redux:", camperType);
+
 
   const handleCamperTypeChange = (type) => {
+    console.log('Selected Type:', type);
     dispatch(setCamperTypeFilter(type)); 
   };
 

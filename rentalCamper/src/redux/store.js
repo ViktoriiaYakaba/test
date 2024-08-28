@@ -14,7 +14,7 @@ import { catalogsReducer } from './catalog/slice';
 import { filtersReducer } from './filters/slice';
 
 const catalogPersistConfig = {
-  key: 'catalog',
+  key: 'catalogs',
   storage,
 };
 

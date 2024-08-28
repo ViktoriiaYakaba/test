@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { CiLocationOn } from 'react-icons/ci';
 import css from './Card.module.css';
-import { selectFilteredCatalog } from '../../redux/catalog/selectors'; 
 import LoadMore from '../buttonLoadMore/LoadMore';
-import Icon from '../icon/Icon';
+import Icon from '../icon/icon';
 import { PiWindLight } from "react-icons/pi";
 import ModalCamper from '../modalCamper/ModalCamper';
 
 
-const Card = () => {
-  const catalogs = useSelector(selectFilteredCatalog);
+const Card = ({catalogs}) => {
   const [visibleCount, setVisibleCount] = useState(4);
   const [activeHearts, setActiveHearts] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);

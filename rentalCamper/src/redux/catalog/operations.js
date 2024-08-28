@@ -18,45 +18,7 @@ export const fetchCatalog = createAsyncThunk(
   }
 );
 
-export const addCatalog = createAsyncThunk(
-  'catalog/addCatalog',
-  async (catalog, thunkAPI) => {
-    try {
-      const response = await axios.post('/catalog', catalog);
-      Notify.success(`${catalog.name} is added to the catalog list!`);
-      return response.data;
-    } catch (e) {
-      Notify.error('Oops. Something is wrong. Please try again!');
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
 
-export const deleteCatalog = createAsyncThunk(
-  'catalog/deleteCatalog',
-  async (catalogId, thunkAPI) => {
-    try {
-      const response = await axios.delete(`/catalog/${catalogId}`);
-      Notify.success('Catalog item deleted successfully!');
-      return response.data;
-    } catch (e) {
-      Notify.error('Oops. Something is wrong. Please try again!');
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
 
-export const updateCatalog = createAsyncThunk(
-  'catalog/updateCatalog',
-  async ({ id, updatedCatalog }, thunkAPI) => {
-    try {
-      const response = await axios.put(`/catalog/${id}`, updatedCatalog);
-      Notify.success('Catalog item updated successfully!');
-      return response.data;
-    } catch (error) {
-      Notify.error('Oops. Something is wrong. Please try again!');
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+
 

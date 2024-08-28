@@ -1,27 +1,33 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-
+export const selectCatalogItems = (state) => state.catalog.catalogs; 
 export const selectLocationFilter = (state) => state.filters.location;
-export const selectEquipmentFilter = (state) => state.filters.equipment;
-export const selectCamperTypeFilter = (state) => state.filters.camperType;
-
-
-export const selectCatalogItems = (state) => state.catalog.items;
+export const selectCamperTypeFilter = (state) => state.filters.camperType; 
+export const selectEquipmentFilter = (state) => state.filters.equipment; 
 
 export const selectFilteredCatalog = createSelector(
-  [selectCatalogItems, selectLocationFilter, selectEquipmentFilter, selectCamperTypeFilter],
-  (items, location, equipment, camperType) => {
-    return items.filter(item => {
-     
-      const matchesLocation = item.location.toLowerCase().includes(location.toLowerCase());
+    [selectCatalogItems, selectLocationFilter, selectCamperTypeFilter, selectEquipmentFilter],
+    (catalogs, locationFilter, camperType, equipment) => {
+        
+        if (!locationFilter && !camperType && Object.values(equipment).every(v => !v)) {
+            return catalogs; 
+        }
 
-      const matchesEquipment = equipment.every(eq => item.details[eq]);
+        return catalogs.filter((catalog) => {
+            const matchesLocation = locationFilter === '' || catalog.location.toLowerCase().includes(locationFilter.toLowerCase());
+            const matchesCamperType = camperType === '' || catalog.form.includes(camperType);
+            const matchesEquipment = 
+                (!equipment.airConditioner || catalog.details.AC) &&
+                (!equipment.kitchen || catalog.details.kitchen) &&
+                (!equipment.TV || catalog.details.TV) &&
+                (!equipment.shower || catalog.details.shower) &&
+                (!equipment.automatic || catalog.transmission === 'automatic');
 
-      const matchesCamperType = camperType ? item.type === camperType : true;
-
-      return matchesLocation && matchesEquipment && matchesCamperType;
-    });
-  }
+            return matchesLocation && matchesCamperType && matchesEquipment;
+        });
+    }
 );
+
+
 
 
