@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import * as Yup from 'yup';
+import Yup from 'yup';
 import css from './ModalCamper.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -23,9 +23,8 @@ const BookingForm = () => {
   });
 
   const handleSubmit = (values, { resetForm }) => {
-    // Your form submission logic can go here
     toast.success("Booking successful!");
-    resetForm(); // Call resetForm here
+    resetForm(); 
   };
 
   const today = new Date();
