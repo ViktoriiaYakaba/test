@@ -1,5 +1,122 @@
-.container form{
+.form {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 44px;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(16, 24, 40, 0.6);
+}
+
+.inputWraper {
+    border-radius: 10px;
+    padding: 18px 200px 18px 18px;
+    width: 360px;
+    height: 56px;
+    background: var(--inputs);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.input {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #101828;
+    border: none;
+    background: var(--inputs);
+    outline: none;
+    width: 200px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #475467;
+}
+
+.name{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #101828;
+}
+
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 360px;
+    
+    border-top: 1px solid rgba(16, 24, 40, 0.1);
+    padding-top: 24px;
+}
+
+.listItem{
+    border: 1px solid rgba(16, 24, 40, 0.2);
+    border-radius: 10px;
+    width: 103px;
+    height: 85px;
+    mix-blend-mode: multiply;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+}
+
+.listItem:hover{
+    border-color: #E44848;
+}
+
+.text{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    text-align: center;
+    color: #101828;
+}
+.active {
+    border-color: #E44848;
+}
+
+
+.btn {
+    border-radius: 200px;
+    padding: 16px 60px;
+    width: 173px;
+    height: 56px;
+    background-color: var(--button);
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #d84343;
 }

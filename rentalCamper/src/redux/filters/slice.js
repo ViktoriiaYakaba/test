@@ -1,3 +1,4 @@
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const filtersSlice = createSlice({
@@ -5,50 +6,36 @@ const filtersSlice = createSlice({
   initialState: {
     location: '',        
     equipment: {
-      airConditioner: 0,
-      automatic: "",
-      kitchen: 0,
-      TV: 0,
-      shower: 0,
+      airConditioner: false,
+      automatic: false,
+      kitchen: false,
+      TV: false,
+      shower: false,
     },       
     camperType: '',    
   },
   reducers: {
-    setLocationFilter(state, action) {
-      state.location = action.payload;  
-    },
-    toggleEquipmentFilter(state, action) {
-      if (state.equipment.includes(action.payload)) {
-        state.equipment = state.equipment.filter(
-          (item) => item !== action.payload
-        ); 
-      } else {
-        state.equipment.push(action.payload); 
-      }
-    },
-    setCamperTypeFilter(state, action) {
-      state.camperType = action.payload; 
+    setFilters(state, action) {
+      const { location, airConditioner, automatic, kitchen, TV, shower, type } = action.payload;
+      state.location = location;  
+      state.equipment = { airConditioner, automatic, kitchen, TV, shower };
+      state.camperType = type;
     },
     clearFilters(state) {
       state.location = '';
       state.equipment = {
-      airConditioner: 0,
-      automatic: "",
-      kitchen: 0,
-      TV: 0,
-      shower: 0,
-    };
+        airConditioner: false,
+        automatic: false,
+        kitchen: false,
+        TV: false,
+        shower: false,
+      };
       state.camperType = '';
     },
   },
 });
 
-export const {
-  setLocationFilter,
-  toggleEquipmentFilter,
-  setCamperTypeFilter,
-  clearFilters,
-} = filtersSlice.actions;
-
+export const { setFilters, clearFilters } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;
+
 
