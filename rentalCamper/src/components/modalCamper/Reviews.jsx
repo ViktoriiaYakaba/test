@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../icon/icon';
+import SvgIcon from '../icon/SvgIcon';
 import css from './ModalCamper.module.css';
 
 const Reviews = ({ catalog }) => {
@@ -19,7 +19,7 @@ const Reviews = ({ catalog }) => {
                 <h4 className={css.reviewerName}>{reviewerName}</h4>
                 <div className={css.starRating}>
                    {[...Array(reviewerRating)].map((_, i) => (
-                  <Icon
+                  <SvgIcon
                     width='20'
                     height='20'
                     icon='star'
@@ -27,7 +27,7 @@ const Reviews = ({ catalog }) => {
                   />
                 ))}
                 {[...Array(5 - reviewerRating)].map((_, i) => (
-                  <Icon
+                  <SvgIcon
                     width='20'
                     height='20'
                     icon='star-2'

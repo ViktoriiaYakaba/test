@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setFilters} from '../../redux/filters/slice'; 
 import { PiWindLight } from "react-icons/pi";
 import clsx from 'clsx';
-import Icon from '../icon/icon';
+import SvgIcon from '../icon/SvgIcon';
 
 const SearchForm = () => {
   const dispatch = useDispatch();
@@ -76,7 +76,7 @@ const SearchForm = () => {
                   style={{ display: 'none' }}
                   checked={values.automatic}
                 />
-                <Icon width="32" height="32" icon="change" />
+                <SvgIcon width="32" height="32" icon="change" />
                 <span className={css.text}>Automatic</span>
               </li>
               <li
@@ -89,7 +89,7 @@ const SearchForm = () => {
                   style={{ display: 'none' }}
                   checked={values.kitchen}
                 />
-                <Icon width="32" height="32" icon="kitchen" />
+                <SvgIcon width="32" height="32" icon="kitchen" />
                 <span className={css.text}>Kitchen</span>
               </li>
               <li
@@ -102,7 +102,7 @@ const SearchForm = () => {
                   style={{ display: 'none' }}
                   checked={values.TV}
                 />
-                <Icon width="32" height="32" icon="TV" />
+                <SvgIcon width="32" height="32" icon="TV" />
                 <span className={css.text}>TV</span>
               </li>
               <li
@@ -115,7 +115,7 @@ const SearchForm = () => {
                   style={{ display: 'none' }}
                   checked={values.shower}
                 />
-                <Icon width="32" height="32" icon="batch" />
+                <SvgIcon width="32" height="32" icon="batch" />
                 <span className={css.text}>Shower/WC</span>
               </li>
             </ul>
@@ -136,7 +136,7 @@ const SearchForm = () => {
                   style={{ display: 'none' }}
                   checked={values.type === 'panelTruck'}
                 />
-                <Icon width="32" height="32" icon="camper-1" />
+                <SvgIcon width="32" height="32" icon="camper-1" />
                 <span className={css.text}>Van</span>
               </li>
               <li
@@ -151,7 +151,7 @@ const SearchForm = () => {
                   style={{ display: 'none' }}
                   checked={values.type === 'fullyIntegrated'}
                 />
-                <Icon width="32" height="32" icon="camper-2" />
+                <SvgIcon width="32" height="32" icon="camper-2" />
                 <span className={css.text}>Fully Integrated</span>
               </li>
               <li
@@ -166,7 +166,7 @@ const SearchForm = () => {
                   style={{ display: 'none' }}
                   checked={values.type === 'alcove'}
                 />
-                <Icon width="32" height="32" icon="camper-3" />
+                <SvgIcon width="32" height="32" icon="camper-3" />
                 <span className={css.text}>Alcove</span>
               </li>
             </ul>

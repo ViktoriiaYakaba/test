@@ -4,7 +4,7 @@ import css from './Card.module.css';
 import LoadMore from '../buttonLoadMore/LoadMore';
 import { PiWindLight } from "react-icons/pi";
 import ModalCamper from '../modalCamper/ModalCamper';
-import Icon from '../icon/icon';
+import SvgIcon from '../icon/SvgIcon';
 
 const Card = ({ catalogs }) => {
   const [visibleCount, setVisibleCount] = useState(4);
@@ -74,9 +74,9 @@ const Card = ({ catalogs }) => {
                     onClick={() => handleToggle(catalog._id)} 
                   >
                     {activeHearts[catalog._id] ? (
-                      <Icon width="24" height="24" icon="heart-2" className={css.heart} />
+                      <SvgIcon width="24" height="24" icon="heart-2" className={css.heart} />
                     ) : (
-                      <Icon width="24" height="24" icon="heart-1" className={css.heart} />
+                      <SvgIcon width="24" height="24" icon="heart-1" className={css.heart} />
                     )}
                   </button>
                 </li>
@@ -84,7 +84,7 @@ const Card = ({ catalogs }) => {
             </div>
             <div className={css.containerRating}>
               <p className={css.rating}>
-                <Icon width="16" height="16" icon="star" /> {catalog.rating}
+                <SvgIcon width="16" height="16" icon="star" /> {catalog.rating}
                 ({catalog.reviews?.length || 0} reviews)
               </p>
               <p className={css.location}>
@@ -93,11 +93,11 @@ const Card = ({ catalogs }) => {
             </div>
             <p className={css.description}>{catalog.description}</p>
             <ul className={css.detailsList}>
-              <li className={css.detailsItem}><Icon width="20" height="20" icon="people" /><span className={css.detailText}>{catalog.adults} adults</span></li>
-              <li className={css.detailsItem}><Icon width="20" height="20" icon="change" /><span className={css.detailText}>Automatic</span></li>
-              <li className={css.detailsItem}><Icon width="20" height="20" icon="petrol" /><span className={css.detailText}>Petrol</span></li>
-              <li className={css.detailsItem}><Icon width="20" height="20" icon="kitchen" /><span className={css.detailText}>Kitchen</span></li>
-              <li className={css.detailsItem}><Icon width="20" height="20" icon="beds" /><span className={css.detailText}>{catalog.details.beds} beds</span></li>
+              <li className={css.detailsItem}><SvgIcon width="20" height="20" icon="people" /><span className={css.detailText}>{catalog.adults} adults</span></li>
+              <li className={css.detailsItem}><SvgIcon width="20" height="20" icon="change" /><span className={css.detailText}>Automatic</span></li>
+              <li className={css.detailsItem}><SvgIcon width="20" height="20" icon="petrol" /><span className={css.detailText}>Petrol</span></li>
+              <li className={css.detailsItem}><SvgIcon width="20" height="20" icon="kitchen" /><span className={css.detailText}>Kitchen</span></li>
+              <li className={css.detailsItem}><SvgIcon width="20" height="20" icon="beds" /><span className={css.detailText}>{catalog.details.beds} beds</span></li>
               <li className={css.detailsItem}><PiWindLight size={20} /><span className={css.detailText}>AC</span></li>
             </ul>
             <button className={css.showMore} onClick={() => openModal(catalog)}>

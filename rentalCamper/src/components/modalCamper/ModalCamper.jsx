@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import css from './ModalCamper.module.css';
-import Icon from '../icon/icon';
+import Icon from '../icon/SvgIcon';
 import { CiLocationOn } from 'react-icons/ci';
 import { MdClose } from "react-icons/md";
 import Features from './Features';
