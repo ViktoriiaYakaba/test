@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { CiLocationOn } from 'react-icons/ci';
 import css from './Card.module.css';
 import LoadMore from '../buttonLoadMore/LoadMore';
-import Icon from '../icon/icon';
 import { PiWindLight } from "react-icons/pi";
 import ModalCamper from '../modalCamper/ModalCamper';
+import Icon from '../icon/icon';
 
 const Card = ({ catalogs }) => {
   const [visibleCount, setVisibleCount] = useState(4);
