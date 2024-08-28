@@ -1,10 +1,10 @@
 import { Formik, Form, Field } from 'formik';
 import css from './SearchForm.module.css';
-import Icon from '../icon/icon';
 import { useDispatch } from 'react-redux';
 import { setFilters} from '../../redux/filters/slice'; 
 import { PiWindLight } from "react-icons/pi";
 import clsx from 'clsx';
+import Icon from '../icon/icon';
 
 const SearchForm = () => {
   const dispatch = useDispatch();
