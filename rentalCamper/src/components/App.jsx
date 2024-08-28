@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import css from './App.module.css';
 import { Layout } from "./Layout";
+import NotFoundPage from '../pages/NotFoundPage';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const CatalogPage = lazy(() => import('../pages/Catalog'));
@@ -25,6 +26,7 @@ const dispatch = useDispatch();
         <Routes>
           <Route path='/' element={<HomePage />} />
             <Route path='/catalog' element={<CatalogPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           </Suspense>
       </Layout>
