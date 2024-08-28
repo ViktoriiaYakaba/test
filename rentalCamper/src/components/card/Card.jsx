@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CiLocationOn } from 'react-icons/ci';
 import css from './Card.module.css';
 import LoadMore from '../buttonLoadMore/LoadMore';
@@ -6,30 +6,33 @@ import Icon from '../icon/icon';
 import { PiWindLight } from "react-icons/pi";
 import ModalCamper from '../modalCamper/ModalCamper';
 
-
-const Card = ({catalogs}) => {
+const Card = ({ catalogs }) => {
   const [visibleCount, setVisibleCount] = useState(4);
   const [activeHearts, setActiveHearts] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCatalog, setSelectedCatalog] = useState(null);
 
-  if (!Array.isArray(catalogs) || catalogs.length === 0) {
-    return <p>No data available based on the filters applied.</p>;
-  }
+  useEffect(() => {
+    const savedHearts = localStorage.getItem('activeHearts');
+    if (savedHearts) {
+      setActiveHearts(JSON.parse(savedHearts));
+    }
+  }, []);
 
   const loadMore = () => {
     setVisibleCount(prevCount => prevCount + 4);
   };
 
   const handleToggle = (id) => {
-    setActiveHearts(prevState => ({
-      ...prevState,
-      [id]: !prevState[id] 
-    }));
+    const newActiveHearts = {
+      ...activeHearts,
+      [id]: !activeHearts[id]
+    };
+    setActiveHearts(newActiveHearts);
+    localStorage.setItem('activeHearts', JSON.stringify(newActiveHearts));
   };
 
   const openModal = (catalog) => {
-     console.log("Opening modal for: ", catalog);
     setSelectedCatalog(catalog); 
     setIsModalOpen(true);
   };
@@ -38,6 +41,10 @@ const Card = ({catalogs}) => {
     setIsModalOpen(false); 
     setSelectedCatalog(null); 
   };
+
+  if (!Array.isArray(catalogs) || catalogs.length === 0) {
+    return <p className={css.text}>No data available based on the filters applied.</p>;
+  }
 
   return (
     <div className={css.cardContainer}>

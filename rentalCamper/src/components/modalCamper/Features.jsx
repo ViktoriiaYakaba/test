@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../icon/Icon';
+import Icon from '../icon/icon';
 import css from './ModalCamper.module.css';
 import { PiWindLight } from "react-icons/pi";
 

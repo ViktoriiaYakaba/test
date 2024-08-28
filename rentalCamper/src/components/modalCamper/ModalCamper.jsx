@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import css from './ModalCamper.module.css';
-import Icon from '../icon/Icon';
+import Icon from '../icon/icon';
 import { CiLocationOn } from 'react-icons/ci';
 import { MdClose } from "react-icons/md";
 import Features from './Features';
@@ -70,5 +70,4 @@ const ModalCamper = ({ catalog, onClose }) => {
 };
 
 export default ModalCamper;
-
 

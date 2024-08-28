@@ -10,7 +10,6 @@ import { Layout } from "./Layout";
 
 const HomePage = lazy(() => import('../pages/Home'));
 const CatalogPage = lazy(() => import('../pages/Catalog'));
-const FavoritePage = lazy(() => import('../pages/Favorite'));
 
 export default function App() {
 const dispatch = useDispatch();
@@ -26,7 +25,6 @@ const dispatch = useDispatch();
         <Routes>
           <Route path='/' element={<HomePage />} />
             <Route path='/catalog' element={<CatalogPage />} />
-            <Route path='/favorite' element={<FavoritePage/>} />
           </Routes>
           </Suspense>
       </Layout>

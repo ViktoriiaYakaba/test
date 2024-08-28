@@ -30,15 +30,16 @@
 
 .text{
     font-weight: 700;
-    font-size: 70px;
+    font-size: 60px;
     line-height: 0.95;
     letter-spacing: -0.01em;
     color: var(--text);
+    margin-bottom: 20px;
 }
 
-span{
+.span{
         font-weight: 500;
-        font-size: 40px;
+        font-size: 30px;
         line-height: 0.95;
         letter-spacing: -0.01em;
         color: var(--text);

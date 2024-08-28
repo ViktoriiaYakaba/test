@@ -9,7 +9,6 @@ export const fetchCatalog = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/catalog');
-      console.log('data', response.data)
       return response.data;
     } catch (e) {
       Notify.error('Oops. Something is wrong. Please try again!');

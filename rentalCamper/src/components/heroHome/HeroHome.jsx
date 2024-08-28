@@ -17,8 +17,9 @@ const HeroHome = () => {
                   <img className={css.img} src={HeroImage} alt="camper" width={672} height={736}/>    
             </li>
               <li className={css.listItem}>
-                          <p className={css.text}>The road is yours, freedom is yours. <span>Camper, van, and campervan rentals.</span></p>
-                         <button type='button' className={css.btn} onClick={handleSearchClick}>Search now</button> 
+          <h1 className={css.text}>Campers of your dreams</h1>
+          <p className={css.span}>You can find everything you want in our catalog</p>
+                         <button type='button' className={css.btn} onClick={handleSearchClick}>View now</button> 
               </li>
               
         </ul>

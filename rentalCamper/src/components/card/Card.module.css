@@ -173,3 +173,11 @@ font-family: "Inter", sans-serif;
 .showMore:hover{
     background: #d84343;
 }
+
+.text{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--gray);
+    text-align: center;
+}

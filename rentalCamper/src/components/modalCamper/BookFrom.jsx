@@ -22,9 +22,10 @@ const BookingForm = () => {
     comment: Yup.string(),
   });
 
-  const handleSubmit = ({ resetForm }) => {
+  const handleSubmit = (values, { resetForm }) => {
+    // Your form submission logic can go here
     toast.success("Booking successful!");
-    resetForm(); 
+    resetForm(); // Call resetForm here
   };
 
   const today = new Date();
@@ -77,7 +78,7 @@ const BookingForm = () => {
           </Form>
         )}
       </Formik>
-      <ToastContainer /> {/* Add ToastContainer here */}
+      <ToastContainer />
     </>
   );
 };
