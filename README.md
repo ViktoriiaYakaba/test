@@ -6,7 +6,7 @@ This website is dedicated to the rental of campervans and motorhomes, offering a
 
 ![Descrizione dell'immagine](./rentalCamper/src/assets/images/home.jpg)
 
-<img src="./rentalCamper/src/assets/images/home.jpg" alt="home page" width="300" height="200">
+<img src="./rentalCamper/src/assets/images/home.jpg" alt="home page" width="500" height="400">
 
 ## Key Features
 
