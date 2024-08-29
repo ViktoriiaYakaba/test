@@ -1,8 +1,5 @@
-# React + Vite
+#TravelTrucs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This website is dedicated to the rental of campervans and motorhomes, offering a wide selection of vehicles for adventurous travelers. Our goal is to provide a seamless and enjoyable experience for customers looking to explore the outdoors with the freedom that a campervan offers.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Descrizione dell'immagine](./src/asets/image/home.jpg)
