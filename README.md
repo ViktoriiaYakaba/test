@@ -4,7 +4,7 @@ This website is dedicated to the rental of campervans and motorhomes, offering a
 
 [Visit my website](https://test-lake-one-20.vercel.app)
 
-<img src="./rentalCamper/src/assets/images/home.jpg" alt="home page" width="800" height="500">
+<img src="./rentalCamper/src/assets/images/home.jpg" alt="home page" width="900" height="500">
 
 ## Key Features
 
